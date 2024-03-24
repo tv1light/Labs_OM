@@ -2,6 +2,6 @@
 
 public class Main {
     public static void main(String[] args){
-        System.out.println(Function.function(0));
+        System.out.println(Fibonacci.fibonacci(11));
     }
 }
