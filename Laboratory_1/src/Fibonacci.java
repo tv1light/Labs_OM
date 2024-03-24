@@ -7,7 +7,7 @@
 //    n1 n2 temp
 public class Fibonacci {
 
-    // any reasons to use recourse?)
+    // any reasons to use recursion?
     public static int fibonacci(int n){
         int n1 = 0;
         int n2 = 1;
