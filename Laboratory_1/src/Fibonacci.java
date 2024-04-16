@@ -1,12 +1,11 @@
 
-
 // 0  1  1   2 3 5 8
 // n1 n2 temp
 
 // 0  1  1  2   3 5 8 13 21 34 55
 //    n1 n2 temp
-public class Fibonacci {
 
+public class Fibonacci {
     // any reasons to use recursion?
     public static int fibonacci(int n){
         int n1 = 0;
@@ -19,7 +18,6 @@ public class Fibonacci {
             n2 = temp;
             --n;
         }
-
         return n1;
     }
 }

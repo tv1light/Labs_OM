@@ -3,6 +3,6 @@
 public class Function {
 
     public static double function(double x) {
-        return Math.pow(Math.sinh(2*x), 2);
+        return Math.pow(Math.sinh(2 * x), 2);
     }
 }
