@@ -28,7 +28,7 @@ public class Main {
             k += 2;
         }
         System.out.println("Метод дихотомии: \n");
-        System.out.println("Минимум: " + Math.abs((a+b))/2 + " Число вычислений: " + k + '\n');
+        System.out.println("Минимум: " + Math.abs((a+b))/2 + " Число вычислений: " + k + '\n' + "Точность: " + (b-a)/2);
     }
 
     public static void fib_method(double a, double b, double eps){
@@ -37,14 +37,16 @@ public class Main {
         while ((b - a)/eps > Fibonacci.fibonacci(n+2)){
             n++;
         }
+        n = 40;
         double x1 = a + (double) Fibonacci.fibonacci(n - 2) * (b-a) /Fibonacci.fibonacci(n);
         double x2 = a + (double) Fibonacci.fibonacci(n - 1) * (b-a) /Fibonacci.fibonacci(n);
-        int iterations = n+2;
+
+        int iterations = 2;
         double y1 = Function.function(x1);
         double y2 = Function.function(x2);
 
         //Основной этап
-        while (n >= 2){
+        while (n >= 4){
             n--;
             if(y1 > y2){
                 a = x1;
@@ -60,10 +62,12 @@ public class Main {
                 x1 = a + (double) Fibonacci.fibonacci(n - 2) * (b-a) /Fibonacci.fibonacci(n);
                 y1 = Function.function(x1);
             }
-
+            ++iterations;
+            System.out.println(b-a);
         }
+
         System.out.println("Метод Фибоначчи: \n");
-        System.out.println("Минимум: " + Math.abs((a+b))/2 +  " Число вычислений: " + iterations + '\n');
+        System.out.println("Минимум: " + Math.abs((a+b))/2 +  " Число вычислений: " + iterations + '\n'+ "Точность: " + (b-a)/2);
     }
 
      public static void GoldenSection(double a, double b, double eps)
@@ -72,7 +76,7 @@ public class Main {
          double y1 = Function.function(x1);
          double y2 = Function.function(x2);
          int iterations = 2;
-         while(b-a > eps)
+         while(b-a > 2*eps)
          {
              if(y1<=y2)
              {
@@ -93,6 +97,6 @@ public class Main {
              ++iterations;
          }
          System.out.println("Метод Золотого сечения: \n");
-         System.out.println("Минимум: " + Math.abs((a+b))/2 +  " Число вычислений: " + iterations + '\n');
+         System.out.println("Минимум: " + Math.abs((a+b))/2 +  " Число вычислений: " + iterations + '\n'+ "Точность: " + (b-a)/2);
      }
 }
